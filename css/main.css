@@ -596,12 +596,11 @@ a:active {
         -ms-transform: rotate(50deg);
          -o-transform: rotate(50deg);
             transform: rotate(50deg);
-            135deg, #6A0DAD, #4B0082
-background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#6A0DAD), color-stop(100%,##4B0082));
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#6A0DAD), color-stop(100%, #4B0082));
   background: -webkit-linear-gradient(-45deg, #6A0DAD 0%,#4B0082 100%);
   background: -o-linear-gradient(-45deg, #6A0DAD 0%,#4B0082 100%);
   background: -ms-linear-gradient(-45deg, #6A0DAD 0%,#4B0082 100%);
-  background: linear-gradient(135deg, #6A0DAD 0%,##4B0082 100%);
+  background: linear-gradient(135deg, #6A0DAD 0%,#4B0082 100%);
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
@@ -642,6 +641,7 @@ background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#6A0D
     background-color: #4B0082;
     border: 2px solid #4B0082;
     opacity: 1;
+    color: #fff;    
 }
 .thumbnail .icon {
     font-size: 50px;
