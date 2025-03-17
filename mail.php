@@ -1,17 +1,37 @@
 <?php
-    $to = "morshed08@gmail.com";
-    $from = $_REQUEST['name'];
-    $headers = "Content-type: text/html;From: $from";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $to = "marciojr_@live.com"; // Seu e-mail para receber mensagens
+    $name = isset($_POST['name']) ? strip_tags($_POST['name']) : '';
+    $email = isset($_POST['email']) ? filter_var($_POST['email'], FILTER_SANITIZE_EMAIL) : '';
+    $message = isset($_POST['message']) ? htmlspecialchars($_POST['message']) : '';
 
-    $fields = array();
-    $fields["name"] = $_REQUEST['name'];
-    $fields["email"] = $_REQUEST['email'];
-    $fields["message"] = $_REQUEST['message'];
+    // Validação básica
+    if (empty($name) || empty($email) || empty($message)) {
+        echo "Preencha todos os campos!";
+        exit;
+    }
 
-    $body = "Here is what was sent:\n\n";
-    $body .= 'Name : '.$fields['name']. '<br>';
-    $body .= 'Email : '.$fields['email']. '<br>';
-    $body .= 'Message : '.$fields['message']. '<br>';
+    // Assunto do e-mail
+    $subject = "Nova mensagem do site";
 
-    $send = mail($to, $body, $headers);
+    // Corpo do e-mail
+    $body = "<strong>Nome:</strong> $name <br>";
+    $body .= "<strong>Email:</strong> $email <br>";
+    $body .= "<strong>Mensagem:</strong> <br>$message";
+
+    // Cabeçalhos do e-mail
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-Type: text/html; charset=UTF-8" . "\r\n";
+    $headers .= "From: $email" . "\r\n";
+    $headers .= "Reply-To: $email" . "\r\n";
+
+    // Enviar e-mail
+    if (mail($to, $subject, $body, $headers)) {
+        echo "success"; // Pode ser usado via AJAX para exibir a mensagem de sucesso
+    } else {
+        echo "error"; // Indica falha no envio
+    }
+}
+?>
+
 
