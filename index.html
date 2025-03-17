@@ -15,7 +15,11 @@
         <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
+<!-- CSS do Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
+<!-- JS do Leaflet -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
         <!-- CSS -->
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -76,7 +80,7 @@
                             <h1 class="wow fadeInDown">Assistência Técnica Especializada</h1>
                             <p class="wow fadeInDown" data-wow-delay="0.3s">Conserto de computadores e notebooks, formatação, instalação de drivers, upgrades de hardware e muito mais. Seu equipamento em boas mãos!</p>
                             <div class="wow fadeInDown" data-wow-delay="0.3s">
-                                <a class="btn btn-default btn-home" href="#about" role="button">Solicitar Orçamento</a>
+                                <a class="btn btn-default btn-home" href="http://wa.me/5585989037373" role="button">Solicitar Orçamento</a>
 	                        </div>
 	                    </div>
 	                </div>
@@ -86,25 +90,25 @@
 	                            <ul id="countdown_dashboard">
                                         <li>
                                             <div class="stat">
-                                                <div class="digit">+5000</div>
-                                                <span class="stat_title">Computadores Consertados</span>
+                                                <div class="stat_title">+2000</div>
+                                                <span class="stat_title">Serviços Concluídos</span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="stat">
-                                                <div class="digit">10+</div>
+                                                <div class="stat_title">10+</div>
                                                 <span class="stat_title">Anos de Experiência</span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="stat">
-                                                <div class="digit">98%</div>
+                                                <div class="stat_title">98%</div>
                                                 <span class="stat_title">Clientes Satisfeitos</span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="stat">
-                                                <div class="digit">24h</div>
+                                                <div class="stat_title">24h</div>
                                                 <span class="stat_title">Atendimento Rápido</span>
                                             </div>
                                         </li>
@@ -142,13 +146,13 @@
                         <div class="about-slider">
                         	<div class="init-slider">
                         		<div class="about-item">
-                        			<a href="https://ginforsolucoes.com"><img src="images/TelaAzul_hero.png" alt="" class="img-responsive"></a>
+                        			<a href="http://wa.me/5585989037373"><img src="images/TelaAzul_hero.png" alt="" class="img-responsive"></a>
                         		</div>
                         		<div class="about-item">
-                        			<a href="https://ginforsolucoes.com"><img src="images/suporte_hero.png" alt="" class="img-responsive"></a>
+                        			<a href="http://wa.me/5585989037373"><img src="images/suporte_hero.png" alt="" class="img-responsive"></a>
                         		</div>
                         		<div class="about-item">
-                        			<a href="https://ginforsolucoes.com"><img src="images/TelaAzul_hero.png" alt="" class="img-responsive"></a>
+                        			<a href="http://wa.me/5585989037373"><img src="images/TelaAzul_hero.png" alt="" class="img-responsive"></a>
                         		</div>
                         	</div>
                         </div>
@@ -243,7 +247,8 @@
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-5 wow fadeInUp">
 						<div class="block text-left">
-							<div class="sub-heading">
+                            <div id="map" style="height: 400px; width: 100%;"></div>
+							<!--<div class="sub-heading">
                                 <h4>Informações de Contato</h4>
                                 <p>Estamos à disposição para atender suas necessidades. Venha nos visitar ou entre em contato por telefone ou e-mail.</p>
                             </div>
@@ -253,7 +258,7 @@
                                 <hr>
                                 <p><strong>E-mail:</strong>&nbsp;ginfor@assistenciatecnica.com<br>
                                 <strong>Telefone:</strong>&nbsp;+55 (85) 98765-4321</p>
-                            </address>
+                            </address>-->
 						</div>
                     </div>
 
@@ -283,6 +288,25 @@
                 </div>
             </div>
         </section>
+        
+        <script>
+
+  // Inicializa o mapa na coordenada desejada (latitude, longitude)
+  var map = L.map('map').setView([-3.73662, -38.5492], 13); // Fortaleza-CE
+
+  // Adiciona os tiles do OpenStreetMap
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  // Adiciona um marcador no mapa
+  var marker = L.marker([-3.73662, -38.5492]).addTo(map)
+    .bindPopup('Estamos aqui! 📍')
+    .openPopup();
+
+
+</script>
+
 
         <section clas="wow fadeInUp">
         	<div class="map-wrapper">

@@ -406,7 +406,7 @@ a:active {
 }
 
 .navbar-default.animated {
-    background-color: #fff;
+    background-color: #272727;
     box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.15);
     padding:10px;
 }
@@ -423,7 +423,7 @@ a:active {
     transition: all 0.3s ease-in-out 0s;
 }
 .navbar-default .navbar-brand {
-    color: #777;
+    color: #fff;
     padding: 5px 0;
 }
 .navbar-default .navbar-nav > li > a,
@@ -433,13 +433,13 @@ a:active {
 }
 .navbar-default.animated .navbar-nav > li > a,
 .navbar-default.animated .navbar-nav > li > a:hover {
-    color: #000;
+    color: #fff;
 }
 .navbar-default .navbar-nav > li.current > a {
     color: #fff;
 }
 .navbar-default.animated .navbar-nav > li.current > a {
-    color: #82c25a;
+    color: #9733EE;
 }
 #hero-area .navbar-default .navbar-nav {
     padding-top: 11px;
@@ -524,6 +524,17 @@ a:active {
     font-weight: 300;
 }
 #hero-area .block .counter ul li .digit {
+    display: inline-block;
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 50px;
+    position: relative;
+    overflow: hidden;
+    height: 60px;
+
+}
+
+.stat_title {
     display: inline-block;
     font-size: 50px;
     font-weight: 300;
@@ -857,6 +868,7 @@ footer {
     text-align: center;
     background: #272727;
     padding: 27px 0px;
+    margin-top: 50px;
 }
 footer p {
     font-weight: 300;
