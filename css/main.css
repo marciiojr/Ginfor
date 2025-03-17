@@ -535,13 +535,13 @@ a:active {
 }
 
 .stat_title {
-    display: inline-block;
+    /*display: inline-block;*/
     font-size: 50px;
     font-weight: 300;
     line-height: 50px;
     position: relative;
     overflow: hidden;
-    height: 60px;
+    /*height: 60px;*/
 }
 /*--
     service start
